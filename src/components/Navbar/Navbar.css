@@ -1,0 +1,19 @@
+nav a{
+  color: #ffffff;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+nav a:hover {
+  color: #d6588c;
+  text-shadow: 3px -3px 10px #8bcee9;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2% 10% 0 50%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

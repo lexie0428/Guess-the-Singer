@@ -1,0 +1,50 @@
+.modal {
+  padding: 10px;
+  border-radius: 50%;
+  color: #73c0ec;
+  text-shadow: 1px -1px 10px #000000;
+  font-size: 30px;
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background-image: linear-gradient(to bottom, rgb(155, 155, 155) 0%, rgb(83, 83, 83) 51%, rgb(14, 14, 14) 100%);
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 80px 15px rgb(248, 248, 248); 
+}
+
+.modal h3 {
+  font-size: 50px;
+}
+
+.modal img{
+  margin: 50px 0 20px 0;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 50px 10px white; 
+  border-radius: 50%;
+}
+
+.modal button{
+  margin-top: 20px;
+color: #ffffff;
+font-weight: 550;
+font-size: 20px;
+width: 100px;
+height: 40px;
+border-radius: 20px;
+background-size: 200% auto;
+transition: 0.5s;
+text-transform: uppercase;
+letter-spacing: 4px;
+background-image: linear-gradient(to right, #E55D87 0%, rgb(93, 190, 229) 51%, #E55D87 100%)
+}
+
+.modal button:hover { 
+  background-position: right;
+  box-shadow: 0 0 15px white; 
+}

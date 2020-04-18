@@ -1,0 +1,46 @@
+.findContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.findContainer input{
+  margin-top: 50px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(129, 129, 129);
+  text-align: center;
+  font-size: 30px;
+}
+
+.findContainer input::placeholder {
+  color: rgb(171, 172, 172);
+}
+
+.findContainer button {
+  color: #ffffff;
+  font-weight: 550;
+  font-size: 25px;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  background-size: 200% auto;
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background-image: linear-gradient(to right, #E55D87 0%, rgb(93, 190, 229) 51%, #E55D87 100%)
+}
+
+.findContainer button:hover { 
+  background-position: right;
+  box-shadow: 0 0 15px white; 
+}
+
+video {
+  margin-top: -10%;
+  z-index: -1;
+}
