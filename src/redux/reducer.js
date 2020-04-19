@@ -1,8 +1,9 @@
-import { SET_SONG, CHANGE_MODAL } from "./action-types";
+import { SET_SONG, CHANGE_MODAL, SET_GENRE } from "./action-types";
 
 const defaultState = {
   song: '',
-  modal: false
+  modal: false,
+  genre: '0'
 };
 
 export const reducer = (state = defaultState, action) => {
@@ -16,6 +17,11 @@ export const reducer = (state = defaultState, action) => {
       return {
         ...state,
         modal: action.modal
+      };
+      case SET_GENRE:
+      return {
+        ...state,
+        genre: action.genre
       };
     default:
       return state;

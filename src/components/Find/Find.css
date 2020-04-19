@@ -1,20 +1,29 @@
 .findContainer {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  height: 150px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5%;
+}
+
+.checkAnswer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 400px;
+  height: 150px;
+  align-items: center;
 }
 
 .findContainer input{
   margin-top: 50px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgb(129, 129, 129);
+  background:none;
   text-align: center;
   font-size: 30px;
+  color: #ffffff;
+  box-shadow: 0 0 10px white
 }
 
 .findContainer input::placeholder {
@@ -32,7 +41,7 @@
   transition: 0.5s;
   text-transform: uppercase;
   letter-spacing: 4px;
-  background-image: linear-gradient(to right, #E55D87 0%, rgb(93, 190, 229) 51%, #E55D87 100%)
+  background-image: linear-gradient(to right,  rgb(248, 231, 77) 0%, rgb(243, 97, 52) 51%,rgb(248, 231, 77) 100%)
 }
 
 .findContainer button:hover { 
@@ -43,4 +52,57 @@
 video {
   margin-top: -10%;
   z-index: -1;
+}
+
+.buttons {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.buttons button {
+  background: none;
+  font-size: 40px;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.buttons button:hover {
+box-shadow: 0 0 10px 5px white;
+transform: scale(1.1,1.1);
+transition-timing-function: ease-out;
+transition-duration: 550ms;
+}
+
+.genresContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 220px;
+  background-color: rgb(173, 173, 173);
+  margin: 3% 5%;
+  border-radius: 10%;
+}
+
+.genresContainer:nth-child(1) {
+  background: url('../../img/pop.jpg') 55% 0/auto 100% no-repeat;
+}
+
+.genresContainer:nth-child(2) {
+  background: url('../../img/mix.jpg') 40% 0/auto 100% no-repeat;
+}
+
+.genresContainer:nth-child(3) {
+  background: url('../../img/rap2.jpg') 40% 0/auto 100% no-repeat;
+}
+.genresContainer:nth-child(4) {
+  background: url('../../img/rock.jpg') 0 0/auto 100% no-repeat;
+}
+.genresContainer:nth-child(5) {
+  background: url('../../img/reggie.jpg') 50% 0/auto 100% no-repeat;
+}
+.genresContainer:nth-child(6) {
+  background: url('../../img/metal.jpg') 40% 0/auto 100% no-repeat;
 }

@@ -1,7 +1,7 @@
 .modal {
   padding: 10px;
   border-radius: 50%;
-  color: #73c0ec;
+  color: #f3994f;
   text-shadow: 1px -1px 10px #000000;
   font-size: 30px;
   position: absolute;
@@ -32,6 +32,7 @@
 .modal button{
   margin-top: 20px;
 color: #ffffff;
+text-shadow: 0 0 20px black;
 font-weight: 550;
 font-size: 20px;
 width: 100px;
@@ -41,7 +42,7 @@ background-size: 200% auto;
 transition: 0.5s;
 text-transform: uppercase;
 letter-spacing: 4px;
-background-image: linear-gradient(to right, #E55D87 0%, rgb(93, 190, 229) 51%, #E55D87 100%)
+background-image: linear-gradient(to right, rgb(248, 231, 77) 0%, rgb(243, 97, 52) 51%,rgb(248, 231, 77) 100%)
 }
 
 .modal button:hover { 

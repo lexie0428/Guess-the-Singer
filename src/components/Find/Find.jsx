@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Find.css';
 import { fetchToSong } from '../../utils/fetchToSong';
+import { fetchToGenre } from '../../utils/fetchToGenre';
 import Modal from '../Modal/Modal';
 
 export default function Find() {
@@ -12,6 +13,14 @@ export default function Find() {
   const [answer, setAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState('');
   const [song, setSong] = useState('');
+  const [genres] = useState([
+    { name: 'Pop', id: '132' },
+    { name: 'Mix', id: '0' },
+    { name: 'Rap', id: '116' },
+    { name: 'Rock', id: '152' },
+    { name: 'Reggae', id: '144' },
+    { name: 'Metal', id: '464' },
+  ]);
 
   function check() {
     if (answer.length > 1 && currentSong.artist.name.toLowerCase().includes(answer.toLowerCase())) {
@@ -30,41 +39,61 @@ export default function Find() {
     setSong(data);
   }
 
-  function isModal() {
-    if (modal) {
-      return <Modal isCorrect={isCorrect} />;
-    } else {
-      return <></>;
-    }
+  async function genre(event) {
+    dispatch({ type: 'SET_GENRE', genre: event.target.id });
+    setSong('');
+    const data = await fetchToGenre(event.target.id);
+    dispatch({ type: 'SET_SONG', song: data });
+    setSong(data);
   }
 
   useEffect(() => {
     setSong(currentSong);
   }, [currentSong]);
 
-  if (!song) {
+  if (modal) {
+    return <Modal isCorrect={isCorrect} />;
+  } else if (!song) {
     return (
       <>
-        {isModal()}
         <div className="findContainer">
-          <button onClick={search}>Play</button>
+          <div className="buttons">
+            {genres.map((item) => {
+              if (item.id !== '0') {
+                return (
+                  <div className="genresContainer">
+                    <button id={item.id} onClick={genre}>
+                      {item.name}
+                    </button>
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="genresContainer">
+                    <button onClick={search}>{item.name}</button>
+                  </div>
+                );
+              }
+            })}
+          </div>
         </div>
       </>
     );
   } else {
     return (
       <>
-        {isModal()}
         <video controls="controls" autoplay="" name="media">
           <source src={song.preview} type="audio/mpeg" />
         </video>
         <div className="findContainer">
-          <input
-            type="text"
-            placeholder="write your answer"
-            onChange={(event) => setAnswer(event.target.value)}
-          />
-          <button onClick={check}>Check</button>
+          <div className="checkAnswer">
+            <input
+              type="text"
+              placeholder="write your answer"
+              onChange={(event) => setAnswer(event.target.value)}
+            />
+            <button onClick={check}>Check</button>
+          </div>
         </div>
       </>
     );

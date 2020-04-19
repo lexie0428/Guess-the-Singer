@@ -6,8 +6,8 @@ nav a{
 }
 
 nav a:hover {
-  color: #d6588c;
-  text-shadow: 3px -3px 10px #8bcee9;
+  color: #ffe600;
+  text-shadow: 3px -3px 10px #f3d6bf;
 }
 
 nav ul{
