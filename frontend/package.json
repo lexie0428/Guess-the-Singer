@@ -2,7 +2,6 @@
   "name": "music",
   "version": "0.1.0",
   "private": true,
-  "proxy": "",
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/helper-create-class-features-plugin": "^7.9.5",
