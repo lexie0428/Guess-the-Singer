@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "start": "npm install && concurrently \"npm run server\" \"npm run client\"",
+    "start": "cd backend && npm install && npm start",
     "server": "cd backend/bin && npm i && npm start",
     "client": "cd frontend && npm i && npm start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "build": "cd frontend && npm install --only=dev && npm install && npm run build && cp -r build ../backend/"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
   }
 }

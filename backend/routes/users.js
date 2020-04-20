@@ -5,10 +5,6 @@ const User = require('../models/users');
 const saltRounds = 10;
 const router = express.Router();
 
-router.get('/', function(req, res){
-  res.redirect('/check');
-});
-
 router.post('/signup', async (req, res, next) => {
   try {
     const { login, email, password } = req.body;
