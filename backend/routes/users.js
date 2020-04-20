@@ -5,6 +5,10 @@ const User = require('../models/users');
 const saltRounds = 10;
 const router = express.Router();
 
+router.get('/', function(req, res){
+  res.redirect('/check');
+});
+
 router.post('/signup', async (req, res, next) => {
   try {
     const { login, email, password } = req.body;
@@ -52,12 +56,12 @@ router.get('/logout', async (req, res, next) => {
   }
 });
 
-// router.get('/check', (req, res) => {
-//   if (req.session.user) {
-//     res.json({ res: true });
-//   } else {
-//     res.json({ res: false });
-//   }
-// });
+router.get('/check', (req, res) => {
+  if (req.session.user) {
+    res.json({ res: true });
+  } else {
+    res.json({ res: false });
+  }
+});
 
 module.exports = router;
