@@ -7,6 +7,7 @@ require('../../frontend/node_modules/dotenv').config();
 var app = require('../app');
 var debug = require('debug')('express-server:server');
 var http = require('http');
+var herokuProxy = require('heroku-proxy');
 
 /**
  * Get port from environment and store in Express.
@@ -15,7 +16,12 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 console.log('!!!!!!!!!!!!!!!!!!!!!!!!!', port, process.env.PORT, process.env.MONGO_URI);
-
+app.use(herokuProxy({
+  hostname: '0.0.0.0',
+  port    : port,
+  prefix  : 'heroku-api',
+  protocol: 'http'
+}));
 
 
 /**
