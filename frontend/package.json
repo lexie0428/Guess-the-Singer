@@ -2,7 +2,7 @@
   "name": "music",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://guess-the-singer.herokuapp.com/",
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/helper-create-class-features-plugin": "^7.9.5",
