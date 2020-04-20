@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-require('../../frontend/node_modules/dotenv').config();
+
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
-var debug = require('debug')('backend:server');
+var debug = require('debug')('express-server:server');
 var http = require('http');
 
 /**
@@ -25,12 +25,9 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-const host = '0.0.0.0';
-
-server.listen(port, host);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-console.log(`Server started on port : ${port}`)
 
 /**
  * Normalize a port into a number, string, or false.
