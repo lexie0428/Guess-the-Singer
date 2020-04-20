@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require('dotenv').config();
+require('../../frontend/node_modules/dotenv').config();
 /**
  * Module dependencies.
  */
