@@ -106,3 +106,7 @@ transition-duration: 550ms;
 .genresContainer:nth-child(6) {
   background: url('../../img/metal.jpg') 40% 0/auto 100% no-repeat;
 }
+
+.video {
+  z-index: 2;
+}

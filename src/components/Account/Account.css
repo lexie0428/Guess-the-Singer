@@ -1,0 +1,57 @@
+ .progress {
+  margin: 0 auto;
+  width: 550px;
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 30px;
+  border-radius: 4px;
+  background-color: #8f1810;
+  display: inline-block;
+}
+
+.wrong-progress-bar {
+  height: 30px;
+  border-radius: 4px;
+  background-color: #f5f77b;
+  display: inline-block;
+}
+
+.tx {
+  text-align: center;
+  padding: 10px;
+}
+
+.user-info {
+  margin-bottom: 40px;
+  padding: 10%;
+  box-shadow: 0 0 80px 10px white;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 40px;
+}
+
+.user-info div {
+  margin-bottom: 10%;
+  font-size: 20px;
+}
+
+.user-info h2 {
+  margin-bottom: 10%;
+  font-size: 40px;
+  text-shadow: 0 0 30px rgb(255, 255, 255);
+  color: #f5f77b;
+}
+
+.account {
+  margin-top: -10%;
+}

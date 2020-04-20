@@ -18,18 +18,23 @@ export default function Modal(props) {
     }
   }
 
-  const closeModal = async () => {
+  const next = async () => {
     let data;
     if (currentGenre === '0') {
       data = await fetchToSong();
     } else {
       data = await fetchToGenre(currentGenre);
-      }
+    }
     if (data) {
       dispatch({ type: 'SET_SONG', song: data });
       dispatch({ type: 'CHANGE_MODAL', modal: false });
     }
   };
+
+  function closeModal() {
+    dispatch({ type: 'CHANGE_MODAL', modal: false });
+    dispatch({ type: 'SET_SONG', song: '' });
+  }
 
   if (song) {
     return (
@@ -39,7 +44,8 @@ export default function Modal(props) {
           <img src={song.artist.picture_medium} alt="img" />
           <h3>{song.artist.name}</h3>
           <div>{song.title}</div>
-          <button onClick={closeModal}>Next</button>
+          <button className='next' onClick={next}>Next</button>
+          <button className="close" onClick={closeModal}></button>
         </div>
       </>
     );

@@ -9,6 +9,7 @@ export default function Find() {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal);
   const currentSong = useSelector((state) => state.song);
+  const login = useSelector((state) => state.login);
 
   const [answer, setAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState('');
@@ -21,6 +22,32 @@ export default function Find() {
     { name: 'Reggae', id: '144' },
     { name: 'Metal', id: '464' },
   ]);
+
+  async function change() {
+    const res =
+      answer.length > 1 && currentSong.artist.name.toLowerCase().includes(answer.toLowerCase())
+        ? true
+        : false;
+    if (res && login && login.length) {
+      await fetch('/change', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset = utf-8' },
+        body: JSON.stringify({
+          login: login,
+          answer: true,
+        }),
+      });
+    } else if (!res && login && login.length) {
+      await fetch('/change', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset = utf-8' },
+        body: JSON.stringify({
+          login: login,
+          answer: false,
+        }),
+      });
+    }
+  }
 
   function check() {
     if (answer.length > 1 && currentSong.artist.name.toLowerCase().includes(answer.toLowerCase())) {
@@ -82,8 +109,8 @@ export default function Find() {
   } else {
     return (
       <>
-        <video controls="controls" autoplay="" name="media">
-          <source src={song.preview} type="audio/mpeg" />
+        <video controls="controls" autoplay="" name="media" className='video'>
+          <source src={song.preview} type="audio/mpeg"/>
         </video>
         <div className="findContainer">
           <div className="checkAnswer">
@@ -92,7 +119,14 @@ export default function Find() {
               placeholder="write your answer"
               onChange={(event) => setAnswer(event.target.value)}
             />
-            <button onClick={check}>Check</button>
+            <button
+              onClick={() => {
+                change();
+                check();
+              }}
+            >
+              Check
+            </button>
           </div>
         </div>
       </>

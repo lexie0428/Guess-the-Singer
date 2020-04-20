@@ -1,22 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'
-import HomePage from './components/HomePage/HomePage'
+import Navbar from './components/Navbar/Navbar';
+import HomePage from './components/HomePage/HomePage';
+import Auth from './components/Auth/Auth';
+import Account from './components/Account/Account'
 
 function App() {
 
   return (
     <div className='container'>
-      <Navbar />
+      <Route render={(props) => <Navbar {...props}/>}/>
       <div className='content'>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          {/* <Route exact path="/signup" render={(props) => <Signup {...props} />} />
-          <Route exact path="/login" render={(props) => <Login {...props} />} />
-          <Route exact path="/reseach" component={Reseacher} />
-          <Route exact path="/account" component={AccountPage} />
-          <Route path="/user/:id" render={(props) => <Amazon {...props} id={props.match.params.id} />} />
-          <Route path="/page/:id" render={(props) => <PageFriend {...props} id={props.match.params.id} />} /> */}
+          <Route exact path="/signup" render={(props) => <Auth {...props}/>} />
+          <Route exact path="/login" render={(props) => <Auth purse='login' {...props}/>} />
+          <Route exact path="/account" render={(props) => <Account {...props}/>} />
         </Switch>
       </div>
     </div>
