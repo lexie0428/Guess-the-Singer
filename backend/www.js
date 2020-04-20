@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 const config = require("config");
-require('../../frontend/node_modules/dotenv').config();
+require('../frontend/node_modules/dotenv').config();
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('./app');
 var debug = require('debug')('express-server:server');
 var http = require('http');
 
@@ -30,6 +30,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+console.log(`App has been started on ${port}`);
 server.on('error', onError);
 server.on('listening', onListening);
 

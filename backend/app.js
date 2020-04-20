@@ -16,9 +16,6 @@ app.use("/", usersRouter);
 app.use("/", answersRouter);
 
 app.get('/*', (req, res) => {
-  console.log('ffff');
-  
-  // res.json({res: 'hhh'})
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
