@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const config = require("config");
 require('../../frontend/node_modules/dotenv').config();
 /**
  * Module dependencies.
@@ -12,7 +13,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '5000');
+var port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
 console.log('!!!!!!!!!!!!!!!!!!!!!!!!!', port, process.env.PORT);
 
