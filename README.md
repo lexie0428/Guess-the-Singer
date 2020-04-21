@@ -2,6 +2,8 @@
 
 App to guess the artists of the songs.Authorized users can see their own statistics
 
+[Website on Heroku](https://guess-singer.herokuapp.com/)
+
 ## Screenshots
 ![Gif](/frontend/public/app.gif)
 
