@@ -3,7 +3,7 @@
 
 
 ## Screenshots
-![Gif](.frontend/public/app.gif)
+![Gif](/frontend/public/app.gif)
 
 ## Before you start
 after clone create .env file with
