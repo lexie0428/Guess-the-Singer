@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const config = require("config");
 require('../../frontend/node_modules/dotenv').config();
 /**
  * Module dependencies.
@@ -15,9 +14,6 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
-console.log('!!!!!!!!!!!!!!!!!!!!!!!!!', port, process.env.PORT);
-
-
 
 /**
  * Create HTTP server.

@@ -6,7 +6,7 @@ App to guess the artists of the songs.Authorized users can see their own statist
 ![Gif](/frontend/public/app.gif)
 
 ## Before you start
-after clone create .env file with
+after clone in backend folder create .env file with
 
 ```
 - MONGO_URI and PORT
