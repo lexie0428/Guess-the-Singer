@@ -1,19 +1,23 @@
 #!/usr/bin/env node
-
+const config = require("config");
+require('../../frontend/node_modules/dotenv').config();
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
-var debug = require('debug')('backend:server');
+var debug = require('debug')('express-server:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '5000');
+var port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
+console.log('!!!!!!!!!!!!!!!!!!!!!!!!!', port, process.env.PORT);
+
+
 
 /**
  * Create HTTP server.
@@ -26,9 +30,9 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+console.log(`App has been started on ${port}`);
 server.on('error', onError);
 server.on('listening', onListening);
-console.log(`Server started on port : ${port}`)
 
 /**
  * Normalize a port into a number, string, or false.
